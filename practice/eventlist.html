@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <div id="container"> container 1  </div> 
+   <div id="container1"> container 2  </div> 
+
+
+<script>
+    let x = document.getElementById("container");
+    x.addEventListener("click",function(){
+document.getElementById("container1").style.backgroundColor="red";
+
+    })
+    x.addEventListener("mouseover",function(){
+document.getElementById("container").style.backgroundColor="blue";
+document.getElementById("container1").style.color="white";
+    })
+    x.addEventListener("mouseout",function(){
+document.getElementById("container").style.backgroundColor="blue";
+document.getElementById("container1").style.color="white";
+    })
+</script>
+
+
+</body>
+</html>

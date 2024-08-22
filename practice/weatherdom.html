@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+
+
+<h1 id="heading">city</h1>
+<h1 id="heading">Temperature</h1>
+<h1 id="heading">weather</h1>
+<h1 id="heading">humidity</h1>
+<h1 id="heading">wind speed</h1>
+
+<button onclick="changingtag()">Change Text</button>
+
+<script>
+    
+    function getWeather() {
+    const city = 'lahore'; // city name
+    const apiKey = 'd78748df85a260e606c28c4e0b4f4273'; 
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('City not found');
+            }
+            return response.json();
+        })
+        .then(data => {
+            displayWeather(data);  
+        })
+        .catch(error => {
+            console.error('Error:', error.message);
+        });
+}
+
+function displayWeather(data) {
+    console.log(`City: ${data.name}`);
+    console.log(`Temperature: ${data.main.temp}°C`);
+    console.log(`Weather: ${data.weather[0].description}`);
+    console.log(`Humidity: ${data.main.humidity}%`);
+    console.log(`Wind Speed: ${data.wind.speed} m/s`);
+}
+
+// Call the function to fetch weather data
+getWeather();
+
+
+    function changingtag(){
+
+    let x= document.getElementsByTagName("h1");
+
+    for (let i=0; i<x.length; i++){
+        x[i].innerHTML=`City: ${data.name}`;
+    }
+}
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

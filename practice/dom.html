@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+<form >
+
+<input type="number" value="0" id="input1">
+<input type="number" value="0" id="input2">
+
+
+</form>
+    <h1 id="heading">DOM</h1>
+<h1 id="heading">DOM</h1>
+<input type="text" value="DOM" id="inputdata">
+
+<!-- <button onclick="changingtag()">Change Text</button> -->
+
+<script>
+    //document.getElementById("heading").innerHTML="data changed";
+   let x= document.getElementsByTagName("h1");
+
+
+    // function changingtag(){
+
+//     let x= document.getElementsByTagName("h1");
+
+//     for (let i=0; i<x.length; i++){
+//         x[i].innerHTML="Data changed";
+//     }
+// }
+let x1 =document.getElementById('inputdata');
+console.log(x1.value);
+document.getElementById("heading").innerHTML = x1.value;
+
+function changingdata(){
+    let x= document.getElementById("input1").value;
+    let y= document.getElementById("input2").value;
+console.log(x)
+console.log(y)
+}
+
+</script>
+
+</body>
+</html>
